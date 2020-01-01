@@ -2,11 +2,14 @@ var noteElements = document.getElementsByTagName("article");
 var notesElement = document.getElementById("notes");
 var noteTemplate = document.getElementById("noteTemplate");
 var noteInput = document.getElementById("noteInput");
+var orderInput = document.getElementById("orderInput");
 var keyboardListener = document.addEventListener("keypress", keyboard);
 
 function initialize() {
     load();
+    order();
     render();
+    log();
 }
 initialize();
 
@@ -32,9 +35,13 @@ function keyboard(e) {
 }
 
 function addNote() {
-    var note = noteInput.value;
-    add({"note": ""+note});
+    //var note = noteInput.value;
+    add({
+        "note": ""+noteInput.value,
+        "order": parseInt(orderInput.value)
+    });
     noteInput.value = '';
+    orderInput.value = '';
     save();
     load();
     clearDisplay();

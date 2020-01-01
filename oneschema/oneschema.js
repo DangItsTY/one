@@ -3,6 +3,7 @@ var oneschema = {
     "category": "string of a hierarchy to organize the note where each level|is|a|pipe",
     "deadline": "timestamp when the note has a due date and time",
     "tags": "string of hashtags #that#can#beused#tofilter#notes",
+    "order": "number which is used for sort order",
     "created": "timestamp when the note was created",
     "id": "a unique ID automatically generated so that no one note is the same"
     
@@ -51,6 +52,12 @@ function save() {
     // save data to real data, localStorage
     dataLocal = JSON.stringify(data);
     localStorage.setItem("data", dataLocal);
+}
+
+function order() {
+    dataNotes = dataNotes.sort(function(a, b) {
+        return a.order > b.order;
+    });
 }
 
 function log() {
