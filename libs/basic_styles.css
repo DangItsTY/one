@@ -1,0 +1,19 @@
+body {
+    margin: 0px;
+}
+.calmblue {
+    background-color: #A6FFEE;
+}
+textarea.naked {
+    font-family: inherit;
+    font-size: inherit;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    background: none;
+    outline: none;
+    resize: none;
+    display: block;
+    width: inherit;
+    height: inherit;
+}
