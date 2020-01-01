@@ -14,12 +14,13 @@ order: <input id="orderInput" name="noteInput" type="text">
 <section id="notes" name="notes"></section>
 </main>
 <template id="noteTemplate">
-<article class="note">
+<article class="note" draggable="true">
 	<textarea name="content"></textarea>
 	<button type="button">Delete</button>
 </article>
 </template>
 </body>
 <script src="oneschema.js"></script>
+<script src="../libs/drag.js"></script>
 <script src="scripts.js"></script>
 </html>
