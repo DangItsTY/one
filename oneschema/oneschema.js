@@ -8,8 +8,8 @@ var oneschema = {
     "id": "a unique ID automatically generated so that no one note is the same"
     
 }
-var data; //data to be used by the tool in JSON
 var dataLocal; //the data from localStorage, the real saved data, in string
+var data; //data to be used by the tool in JSON
 var dataNotes; //an array of all of the notes
 
 function initializeTest() {
@@ -46,6 +46,17 @@ function add(options) {
     note["id"] = ""+Date.now() + ""+Math.floor(Math.random() * 10000000000000000);
     
     dataNotes.push(note);
+}
+
+function remove(id) {
+	dataNotes.splice(get(id), 1);
+}
+
+function get(id) {
+	var index = dataNotes.findIndex(function(element, index, array) {
+		return element.id == id;
+	}, this);
+	return index;
 }
 
 function save() {

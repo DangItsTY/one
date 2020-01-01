@@ -10,6 +10,7 @@ function initialize() {
     order();
     render();
     log();
+	console.log("END INITIALIZATION");
 }
 initialize();
 
@@ -18,8 +19,9 @@ function render() {
         var elementGhost = noteTemplate.content.cloneNode(true);
         notesElement.appendChild(elementGhost);
         var newElement = noteElements[noteElements.length - 1];
-        newElement.innerHTML = dataNotes[i].note;
         newElement.setAttribute("id", dataNotes[i].id);
+		newElement.children[0].value = dataNotes[i].note;
+		newElement.children[1].addEventListener("click", deleteNote);
     }
 }
 
@@ -47,4 +49,13 @@ function addNote() {
     clearDisplay();
 	order();
     render();
+}
+
+function deleteNote(e) {
+	remove(e.target.parentElement.getAttribute("id"));
+	save();
+	load();
+	clearDisplay();
+	order();
+	render();
 }
