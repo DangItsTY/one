@@ -56,7 +56,7 @@ function save() {
 
 function order() {
     dataNotes = dataNotes.sort(function(a, b) {
-        return a.order > b.order;
+        return a.order - b.order;
     });
 }
 
@@ -67,6 +67,7 @@ function log() {
     console.log(dataNotes);
 }
 
+// for testing
 function generateRandomNotes(count) {
     // generate a random amount of notes for testing purposes
     for (var i = 0; i < count; i++) {

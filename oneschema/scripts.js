@@ -45,5 +45,6 @@ function addNote() {
     save();
     load();
     clearDisplay();
+	order();
     render();
 }
