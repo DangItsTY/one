@@ -2,7 +2,7 @@ var noteElements = document.getElementsByTagName("article");
 var notesElement = document.getElementById("notes");
 var noteTemplate = document.getElementById("noteTemplate");
 var noteInput = document.getElementById("noteInput");
-//var orderInput = document.getElementById("orderInput");
+var categoryInput = document.getElementById("categoryInput");
 var keyboardListener = document.addEventListener("keypress", keyboard);
 var dropListener = document.addEventListener("drop", onDrop);
 
@@ -28,7 +28,8 @@ function render() {
         newElement.addEventListener("dragover", noteDragOver);
         newElement.addEventListener("drop", noteDrop);
 		newElement.children[0].value = dataNotes[i].note;
-		newElement.children[1].addEventListener("click", deleteNote);
+		newElement.children[1].value = dataNotes[i].category ? dataNotes[i].category : '';
+		newElement.children[2].addEventListener("click", deleteNote);
     }
 }
 
@@ -39,9 +40,9 @@ function clearDisplay() {
 function keyboard(e) {
     if (e.keyCode == 13) {
         e.preventDefault();
-        if (e.target == noteInput) {
+        if (e.target == noteInput || e.target == categoryInput) {
             addNote();
-        } else if (e.target.tagName == "TEXTAREA") {
+        } else if (e.target.getAttribute("name") == "note" || e.target.getAttribute("name") == "category") {
             saveNote(e);
         }
     }
@@ -50,10 +51,10 @@ function keyboard(e) {
 function addNote() {
     add({
         "note": ""+noteInput.value,
-        //"order": parseInt(orderInput.value)
+        "category": categoryInput.value
     });
     noteInput.value = '';
-    //orderInput.value = '';
+    categoryInput.value = '';
     save();
     load();
     clearDisplay();
@@ -74,7 +75,10 @@ function deleteNote(e) {
 
 function saveNote(e) {
     var id = e.target.parentElement.getAttribute("id");
-    set(id, {"note": e.target.value});
+    var key = e.target.getAttribute("name");
+    var newNote = {};
+    newNote[key] = e.target.value;
+    set(id, newNote);
     save();
 	load();
 	clearDisplay();

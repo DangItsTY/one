@@ -9,13 +9,15 @@
 <main>
 <section>
 <input id="noteInput" name="noteInput" type="text" placeholder="Enter new note...">
+<input id="categoryInput" name="categoryInput" type="text" placeholder="With category...">
 <!--order: <input id="orderInput" name="noteInput" type="text">-->
 </section>
 <section id="notes" name="notes"></section>
 </main>
 <template id="noteTemplate">
 <article class="note" draggable="true">
-	<textarea name="content"></textarea>
+	<textarea name="note"></textarea>
+	<input type="text" name="category" placeholder="category">
 	<button type="button">Delete</button>
 </article>
 </template>
