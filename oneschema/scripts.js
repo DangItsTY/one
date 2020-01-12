@@ -4,6 +4,7 @@ var noteTemplate = document.getElementById("noteTemplate");
 var noteInput = document.getElementById("noteInput");
 var categoryInput = document.getElementById("categoryInput");
 var deadlineInput = document.getElementById("deadlineInput");
+var deadlineFilter = document.getElementById("deadlineFilter");
 var keyboardListener = document.addEventListener("keypress", keyboard);
 var dropListener = document.addEventListener("drop", onDrop);
 
@@ -99,4 +100,33 @@ function onDrop(e) {
 	order();
 	orderRegister();
 	render();
+}
+
+function filter(e) {
+    switch(e.target.getAttribute("name")) {
+        case "deadlineFilter":
+            filterDeadline(e);
+            break;
+        default:
+    }
+}
+
+function filterDeadline(e) {
+    var now = Date.now();
+    if (e.target.checked) {
+    	for (var i = 0; i < dataNotes.length; i++) {
+    		var deadline = dataNotes[i]["deadline"] ? new Date(dataNotes[i]["deadline"]) : dataNotes[i]["deadline"];
+    		if (!deadline || deadline > now) {
+    			document.getElementById(dataNotes[i]["id"]).setAttribute("hidden", true);
+    		}
+    	}
+    } else {
+        filterClear();
+    }
+}
+
+function filterClear() {
+    for (var i = 0; i < noteElements.length; i++) {
+        noteElements[i].removeAttribute("hidden");
+    }
 }
