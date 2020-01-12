@@ -1,8 +1,13 @@
-body {
-    margin: 0px;
-}
+/* Colors */
 .calmblue {
     background-color: #A6FFEE;
+}
+.white {
+	background-color: #FFFFFF;
+}
+
+body {
+    margin: 0px;
 }
 textarea.naked {
     font-family: inherit;

@@ -1,0 +1,16 @@
+body {
+    margin: 0px;
+    background-color: #A6FFEE;
+	font-family: "Courier New", Courier, monospace;
+}
+.note {
+	background-color: #FFFFFF;
+	margin: 13px;
+	padding: 8px;
+	font-size: 21px;
+	font-weight: normal;
+	text-align: left;
+}
+p.note {
+	border-radius: 8px;
+}
