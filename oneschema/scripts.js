@@ -3,6 +3,7 @@ var notesElement = document.getElementById("notes");
 var noteTemplate = document.getElementById("noteTemplate");
 var noteInput = document.getElementById("noteInput");
 var categoryInput = document.getElementById("categoryInput");
+var deadlineInput = document.getElementById("deadlineInput");
 var keyboardListener = document.addEventListener("keypress", keyboard);
 var dropListener = document.addEventListener("drop", onDrop);
 
@@ -40,7 +41,7 @@ function clearDisplay() {
 function keyboard(e) {
     if (e.keyCode == 13) {
         e.preventDefault();
-        if (e.target == noteInput || e.target == categoryInput) {
+        if (e.target == noteInput || e.target == categoryInput || e.target == deadlineInput) {
             addNote();
         } else if (e.target.getAttribute("name") == "note" || e.target.getAttribute("name") == "category") {
             saveNote(e);
@@ -51,10 +52,13 @@ function keyboard(e) {
 function addNote() {
     add({
         "note": ""+noteInput.value,
-        "category": categoryInput.value
+        "category": categoryInput.value,
+		"deadline": deadlineInput.value
     });
     noteInput.value = '';
     categoryInput.value = '';
+	deadlineInput.value = '';
+		
     save();
     load();
     clearDisplay();

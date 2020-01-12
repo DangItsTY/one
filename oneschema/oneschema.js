@@ -3,6 +3,7 @@ var oneschema = {
     "category": "string of a hierarchy to organize the note where each level|is|a|pipe",
     "deadline": "timestamp when the note has a due date and time",
     "tags": "string of hashtags #that#can#beused#tofilter#notes",
+	"priority": "number to be used to dynamically change the importance of a note and can at any time be manually set",
     "order": "number which is used for sort order",
     "created": "timestamp when the note was created",
     "id": "a unique ID automatically generated so that no one note is the same"
