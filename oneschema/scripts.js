@@ -31,7 +31,8 @@ function render() {
         newElement.addEventListener("drop", noteDrop);
 		newElement.children[0].value = dataNotes[i].note;
 		newElement.children[1].value = dataNotes[i].category ? dataNotes[i].category : '';
-		newElement.children[2].addEventListener("click", deleteNote);
+		newElement.children[2].value = dataNotes[i].deadline ? dataNotes[i].deadline : '';
+		newElement.children[3].addEventListener("click", deleteNote);
     }
 }
 
@@ -44,7 +45,10 @@ function keyboard(e) {
         e.preventDefault();
         if (e.target == noteInput || e.target == categoryInput || e.target == deadlineInput) {
             addNote();
-        } else if (e.target.getAttribute("name") == "note" || e.target.getAttribute("name") == "category") {
+        } else if (
+            e.target.getAttribute("name") == "note" ||
+            e.target.getAttribute("name") == "category" ||
+            e.target.getAttribute("name") == "deadline") {
             saveNote(e);
         }
     }
@@ -115,8 +119,7 @@ function filterDeadline(e) {
     var now = Date.now();
     if (e.target.checked) {
     	for (var i = 0; i < dataNotes.length; i++) {
-    		var deadline = dataNotes[i]["deadline"] ? new Date(dataNotes[i]["deadline"]) : dataNotes[i]["deadline"];
-    		if (!deadline || deadline > now) {
+    		if (!dataNotes[i]["deadline"]) {
     			document.getElementById(dataNotes[i]["id"]).setAttribute("hidden", true);
     		}
     	}

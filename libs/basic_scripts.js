@@ -12,12 +12,15 @@ function filter() {
 }
 
 function filterDeadline() {
-    console.log("a simple way to hide all notes that are not due today");
+    console.log("a simple way to hide all notes with no deadline");
     var now = Date.now();
-	for (var i = 0; i < dataNotes.length; i++) {
-		var deadline = dataNotes[i]["deadline"] ? new Date(dataNotes[i]["deadline"]) : dataNotes[i]["deadline"];
-		if (!deadline || deadline > now) {
-			document.getElementById(dataNotes[i]["id"]).setAttribute("hidden", true);
-		}
-	}
+    if (e.target.checked) {
+    	for (var i = 0; i < dataNotes.length; i++) {
+    		if (!dataNotes[i]["deadline"]) {
+    			document.getElementById(dataNotes[i]["id"]).setAttribute("hidden", true);
+    		}
+    	}
+    } else {
+        filterClear();
+    }
 }
