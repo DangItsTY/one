@@ -5,6 +5,15 @@
 .white {
 	background-color: #FFFFFF;
 }
+.alertred {
+    background-color: #FF4D4D;
+}
+.alertreddark {
+    background-color: #610000;
+}
+.alertredopaque {
+    color: #ED9F9F;
+}
 
 body {
     margin: 0px;

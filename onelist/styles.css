@@ -1,0 +1,10 @@
+body {
+    background-color: #610000;
+}
+.note {
+    background-color: #FF4D4D;
+    color: #ED9F9F;
+}
+.onenote:first-child .note {
+    color: #FFFFFF;
+}
