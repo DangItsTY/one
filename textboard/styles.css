@@ -7,7 +7,13 @@ body {
     width: 1024px;
     margin-left: auto;
     margin-right: auto;
-    zoom: 117%;
+	zoom: 117%;
+}
+@media (min-width: 1597px) {
+.textboard {
+	width: 1597px;
+	zoom: 118%;
+}
 }
 .textboard .note {
     font-size: 13px;
@@ -20,7 +26,13 @@ body {
     margin-right: 13px;
     overflow-y: auto;
 }
+@media (max-width: 1597px) {
 .textboard .note:nth-child(7n + 1) {
+    margin-left: 13px;
+}
+}
+@media (min-width: 1597px) {
+.textboard .note:nth-child(11n + 1) {
     margin-left: 13px;
 }
 .textboard .note h1 {
