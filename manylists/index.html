@@ -1,32 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8"/>
-<title>textboard</title>
-<link rel="stylesheet" type="text/css" href="styles.css"/>
+<meta charset="UTF-8" />
+<title>Basic HTML5</title>
+<link rel="stylesheet" type="text/css" href="../libs/styles.css" />
+<link rel="stylesheet" type="text/css" href="styles.css" />
 </head>
 <body>
-<section>
-<article>
-    do this one thing that i have to do but i keep putting it off
-</article>
-<article>
-    do this one thing that i have to do but i keep putting it off
-</article>
-<article>
-    do this one thing that i have to do but i keep putting it off
-</article>
-<article>
-    do this one thing that i have to do but i keep putting it off
-</article>
-</section>
-<template>
-<article id="this is the id of the note">
-    this is where the actual note goes
+<main id="main">
+</main>
+<template id="noteTemplate" name="noteTemplate">
+<article name="onenote" class="onenote">
+	<p name="note" class="note">note populates here if there is data</p>
 </article>
 </template>
-</body>
+<template id="listTemplate" name="listTemplate">
+    <section name="listType">category goes here</section>
+</template>
 <script src="../libs/oneschema.js"></script>
+<script src="../libs/scripts.js"></script>
+<script src="../libs/drag.js"></script>
 <script src="scripts.js"></script>
 </body>
 </html>

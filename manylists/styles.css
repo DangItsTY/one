@@ -1,0 +1,8 @@
+main {
+    display: flex;
+}
+.note {
+    margin: 3px;
+    padding: 5px;
+    font-size: 13px;
+}

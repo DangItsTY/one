@@ -4,7 +4,7 @@ var noteTemplate = document.getElementById("noteTemplate");
 
 function initialize() {
     load();
-    render();
+    //render();
 }
 initialize();
 
