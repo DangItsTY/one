@@ -35,6 +35,7 @@ body {
 .textboard .note:nth-child(11n + 1) {
     margin-left: 13px;
 }
+}
 .textboard .note h1 {
     font-size: inherit;
     font-weight: normal;
