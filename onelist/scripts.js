@@ -1,3 +1,5 @@
+render();
+
 function filter() {
 	// remove elements not pertinent
 	var now = Date.now();
