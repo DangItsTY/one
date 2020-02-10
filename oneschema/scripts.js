@@ -7,6 +7,7 @@ var deadlineInput = document.getElementById("deadlineInput");
 var deadlineFilter = document.getElementById("deadlineFilter");
 var keyboardListener = document.addEventListener("keypress", keyboard);
 var dropListener = document.addEventListener("drop", onDrop);
+var filters = [];
 
 function initialize() {
     load();
@@ -15,6 +16,7 @@ function initialize() {
 	save();
 	load();
     render();
+    filter();
     log();
 	console.log("END INITIALIZATION");
 }
@@ -70,6 +72,7 @@ function addNote() {
 	order();
 	orderRegister();
     render();
+    filter();
 }
 
 function deleteNote(e) {
@@ -80,6 +83,7 @@ function deleteNote(e) {
 	order();
 	orderRegister();
 	render();
+	filter();
 }
 
 function saveNote(e) {
@@ -94,6 +98,7 @@ function saveNote(e) {
 	order();
 	orderRegister();
 	render();
+	filter();
 }
 
 function onDrop(e) {
@@ -104,28 +109,56 @@ function onDrop(e) {
 	order();
 	orderRegister();
 	render();
+	filter();
 }
 
-function filter(e) {
-    switch(e.target.getAttribute("name")) {
-        case "deadlineFilter":
-            filterDeadline(e);
-            break;
-        default:
-    }
-}
 
-function filterDeadline(e) {
-    var now = Date.now();
+
+// Filter functionalities
+// Seeing if this works, maybe this should be its own script file?
+// filters declared at top
+// placed filter function as part of any refresh functions
+
+function filterToggle(e) {
+    var newFilter = e.target.getAttribute("name");
+    var index = filters.indexOf(newFilter);
     if (e.target.checked) {
-    	for (var i = 0; i < dataNotes.length; i++) {
-    		if (!dataNotes[i]["deadline"]) {
-    			document.getElementById(dataNotes[i]["id"]).setAttribute("hidden", true);
-    		}
-    	}
+        index == -1 ? filters.push(newFilter) : null;
     } else {
+        index != -1 ? filters.splice(index, 1) : null;
+    }
+    
+    filter();
+}
+
+function filter() {
+    // first, set all to hidden true
+    for (var i = 0; i < noteElements.length; i++) {
+        noteElements[i].setAttribute("hidden", true);
+    }
+    
+    // then, remove hidden if filter
+    for (var i = 0; i < filters.length; i++) {
+        switch(filters[i]) {
+            case "deadlineFilter":
+                filterDeadline();
+                break;
+            default:
+        }
+    }
+    
+    // if no filters, then clear filters and show all
+    if (filters.length <= 0) {
         filterClear();
     }
+}
+
+function filterDeadline() {
+	for (var i = 0; i < dataNotes.length; i++) {
+		if (dataNotes[i]["deadline"]) {
+			document.getElementById(dataNotes[i]["id"]).removeAttribute("hidden");
+		}
+	}
 }
 
 function filterClear() {
