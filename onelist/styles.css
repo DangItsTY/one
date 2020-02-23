@@ -4,6 +4,8 @@ body {
 .note {
     background-color: #FF4D4D;
     color: #ED9F9F;
+    display: inline-block;
+    width: calc(100% - 13px - 100px); /* temp */
 }
 .onenote:first-child .note {
     color: #FFFFFF;

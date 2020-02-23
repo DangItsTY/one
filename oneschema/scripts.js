@@ -33,7 +33,19 @@ function render() {
         newElement.addEventListener("drop", noteDrop);
 		newElement.children[0].value = dataNotes[i].note;
 		newElement.children[1].value = dataNotes[i].category ? dataNotes[i].category : '';
-		newElement.children[2].value = dataNotes[i].deadline ? dataNotes[i].deadline : '';
+		var newDeadline;
+		if (dataNotes[i].deadline) {
+		    var date = new Date(dataNotes[i].deadline);
+		    var year = date.getFullYear();
+		    var month = date.getMonth() + 1;
+		    month < 10 ? month = "0" + month : month = "" + month;
+		    var day = date.getDate();
+		    day < 10 ? day = "0" + day : day = "" + day;
+		    newDeadline = year + "-" + month + "-" + day;
+		} else {
+		    newDeadline = '';
+		}
+		newElement.children[2].value = newDeadline;
 		newElement.children[3].addEventListener("click", deleteNote);
     }
 }
@@ -90,7 +102,19 @@ function saveNote(e) {
     var id = e.target.parentElement.getAttribute("id");
     var key = e.target.getAttribute("name");
     var newNote = {};
-    newNote[key] = e.target.value;
+    
+    var newValue;
+    switch (key) {
+        case "deadline":
+            var d = e.target.value.split("-");
+            var date = new Date(parseInt(d[0]), parseInt(d[1])-1, parseInt(d[2]));
+            newValue = date.toISOString();
+            break;
+        default:
+            newValue = e.target.value;
+    }
+    
+    newNote[key] = newValue;
     set(id, newNote);
     save();
 	load();
