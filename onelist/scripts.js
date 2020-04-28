@@ -32,3 +32,12 @@ function saveNote(e) {
 	render();
 	filter();
 }
+
+function deleteNote(e) {
+	remove(e.target.parentElement.getAttribute("id"));
+	save();
+	load();
+	clearDisplay();
+	render();
+	filter();
+}
