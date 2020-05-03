@@ -8,7 +8,11 @@
 </head>
 <body>
 <main>
-<section id="notes" name="notes">
+<header name="introduction" class="introduction">
+<h1>Hello Ty. Welcome to one, your one stop solution for all of your life needs.</h1>
+<p>From maintaining routines to cookbooks, you will have many tools at your disposal.</p>
+</header>
+<nav name="tools">
 <a href="oneschema/index.html">oneschema</a>
 <a href="onelist/index.html">onelist</a>
 <a href="textboard/index.html">textboard</a>
@@ -16,9 +20,104 @@
 <a href="noted/index.html">noted</a>
 <a href="export/index.html">export</a>
 <a href="import/index.html">import</a>
+</nav>
+<section id="one" name="one">
+<details>
+	<summary><h1>one</h1>: the one stop solution for all the things</summary>
+	<header>
+	<p>My cumulative life management tools thus far come together in one centralized solution hub, like a toolbox that I can just pick up and use for the right job.</p>
+	</header>
+	<section>
+	</section>
+</details>
+</section>
+<section id="oneschema" name="oneschema">
+<details>
+	<summary><h1>oneschema</h1>: all the things are just notes</summary>
+	<header>
+	<p>Notes are simple JSON objects with a JSON Schema for some structure, but still keeps data as freeforming.</p>
+	</header>
+	<section>
+	</section>
+</details>
+</section>
+<section id="onelist" name="onelist">
+<details>
+	<summary><h1>onelist</h1>: it's just another todo list, but one that you actually didn't know you needed</summary>
+	<header>
+	<p>A todo list powered by AI which computes only the most urgent and important tasks according to <i>you</i>.</p>
+	</header>
+	<section>
+	</section>
+</details>
+</section>
+<section id="textboard" name="textboard">
+<details>
+	<summary><h1>textboard</h1>: a list that goes sideways, and that's it</summary>
+	<header>
+	<p>For whatever reason, you need to see a list of things horizontally because vertical just ain't cutting it and whiteboards ain't doing it b/c you like typing.</p>
+	</header>
+	<section name="textboard">
+	</section>
+</details>
+</section>
+<section id="manylists" name="manylists">
+<details>
+	<summary><h1>manylists</h1>: you've got an itch to just see multiple lists at once</summary>
+	<header>
+	<p>When looking at one list is too boring and you need to juxtapose a bunch of lists at once to feel like you're in a matrix.</p>
+	</header>
+	<section>
+	</section>
+</details>
+</section>
+<section id="noted" name="noted">
+<details>
+	<summary><h1>noted</h1>: the first tool that started it all, because it actually worked</summary>
+	<header>
+	<p>Let this tool KISS you by jotting down a something and then just move on with life.</p>
+	</header>
+	<section>
+	</section>
+</details>
+</section>
+<section id="export" name="export">
+<details>
+	<summary><h1>export</h1>: data export because that's just how it do</summary>
+	<header>
+	<p>On a technical level, one is designed to be as safe and private as possible so you'll always own your data and never pings back to the server or interwebs.</p>
+	</header>
+	<section>
+	</section>
+</details>
+</section>
+<section id="import" name="import">
+<details>
+	<summary><h1>import</h1>: data import because you're cool and smart and just want to load another set of data</summary>
+	<header>
+	<p>You can always copy your own data b/c you own it, and you can also import other data like you would a memory card back in the console days.</p>
+	</header>
+	<section>
+	</section>
+</details>
+</section>
+
+
+
+
+
+
+
+
+
+</main>
+<section id="notes" name="notes">
 </section>
 </main>
 <template id="noteTemplate" name="noteTemplate">
+<article name="onenote" class="onenote">
+	<p name="note" class="note">note populates here if there is data</p>
+</article>
 </template>
 <script src="libs/oneschema.js"></script>
 <script src="libs/scripts.js"></script>
