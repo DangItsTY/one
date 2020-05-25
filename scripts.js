@@ -1,5 +1,6 @@
 var oneElement = document.getElementById("one").getElementsByTagName("section")[0];
 var oneschemaElement = document.getElementById("oneschema").getElementsByTagName("section")[0];
+var onestatusElement = document.getElementById("onestatus").getElementsByTagName("section")[0];
 var onelistElement = document.getElementById("onelist").getElementsByTagName("section")[0];
 var textboardElement = document.getElementById("textboard").getElementsByTagName("section")[0];
 var manylistsElement = document.getElementById("manylists").getElementsByTagName("section")[0];
@@ -29,10 +30,28 @@ function render() {
 			case "ax":
 				targetElement = oneElement;
 				break;
+			case "braindump":
+				targetElement = oneElement;
+				break;
+			case "notetoss":
+				targetElement = oneElement;
+				break;
+			case "creativity":
+				targetElement = oneElement;
+				break;
 			case "oneschema":
 				targetElement = oneschemaElement;
 				break;
+			case "onestatus":
+			  targetElement = onestatusElement;
+			  break;
 			case "onelist":
+				targetElement = onelistElement;
+				break;
+			case "trackthat":
+				targetElement = onelistElement;
+				break;
+			case "sundaylist":
 				targetElement = onelistElement;
 				break;
 			case "textboard":
