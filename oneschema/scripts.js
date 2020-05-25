@@ -4,6 +4,8 @@ var noteTemplate = document.getElementById("noteTemplate");
 var noteInput = document.getElementById("noteInput");
 var categoryInput = document.getElementById("categoryInput");
 var deadlineInput = document.getElementById("deadlineInput");
+var filterInput = document.getElementById("filterInput");
+var filterList = document.getElementById("filterList");
 var deadlineFilter = document.getElementById("deadlineFilter");
 var keyboardListener = document.addEventListener("keypress", keyboard);
 var dropListener = document.addEventListener("drop", onDrop);
@@ -64,6 +66,8 @@ function keyboard(e) {
             e.target.getAttribute("name") == "category" ||
             e.target.getAttribute("name") == "deadline") {
             saveNote(e);
+        } else if (e.target == filterInput) {
+          filterCategory(e);
         }
     }
 }
@@ -155,6 +159,15 @@ function filterToggle(e) {
     filter();
 }
 
+function filterCategory(e) {
+  var newFilter = filterInput.value;
+  var index = filters.indexOf(newFilter);
+  index == -1 ? filters.push(newFilter) : filters.splice(index, 1);
+  
+  filterInput.value = '';
+  filter();
+}
+
 function filter() {
     // first, set all to hidden true
     for (var i = 0; i < noteElements.length; i++) {
@@ -168,6 +181,7 @@ function filter() {
                 filterDeadline();
                 break;
             default:
+              filterByCategory(filters[i]);
         }
     }
     
@@ -175,6 +189,9 @@ function filter() {
     if (filters.length <= 0) {
         filterClear();
     }
+    
+    // finally, display the current filters applied
+    renderFilterList();
 }
 
 function filterDeadline() {
@@ -185,8 +202,26 @@ function filterDeadline() {
 	}
 }
 
+function filterByCategory(category) {
+  // if it wasn't for the filterToggle, i could at least make this O(n) instead of O(nf)
+  for (var i = 0; i < dataNotes.length; i++) {
+		if (dataNotes[i]["category"] == category) {
+			document.getElementById(dataNotes[i]["id"]).removeAttribute("hidden");
+		}
+	}
+}
+
 function filterClear() {
     for (var i = 0; i < noteElements.length; i++) {
         noteElements[i].removeAttribute("hidden");
     }
+}
+
+function renderFilterList() {
+  var result = "";
+  for (var i = 0; i < filters.length; i++) {
+    result += " " + filters[i] + ",";
+  }
+  result = result.substring(0, result.length -1);
+  filterList.innerHTML = result;
 }
