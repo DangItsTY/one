@@ -12,6 +12,8 @@ var dropListener = document.addEventListener("drop", onDrop);
 var filters = [];
 
 function initialize() {
+	loadNavbar();
+	
     load();
     order();
 	orderRegister();

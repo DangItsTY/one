@@ -1,3 +1,5 @@
+initialize();
+
 render();
 
 function filter() {

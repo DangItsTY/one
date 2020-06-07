@@ -3,6 +3,13 @@ body {
     background-color: #A6FFEE;
 	font-family: "Courier New", Courier, monospace;
 }
+nav {
+	margin: 13px;
+	text-align: center;
+}
+nav a{
+	margin: 0px 5px;
+}
 .note {
 	background-color: #FFFFFF;
 	margin: 13px;

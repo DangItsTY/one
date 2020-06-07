@@ -8,6 +8,8 @@ var notedElement = document.getElementById("noted").getElementsByTagName("sectio
 var exportElement = document.getElementById("export").getElementsByTagName("section")[0];
 var importElement = document.getElementById("import").getElementsByTagName("section")[0];
 
+initialize();
+
 function render() {
 	for (var i = 0; i < dataNotes.length; i++) {
 		var targetElement;
@@ -84,3 +86,6 @@ function render() {
 	}
 }
 render();
+
+// do not load navigation because this page is different
+function loadNavbar() {};

@@ -2,6 +2,8 @@ var noteTemplate = document.getElementById("noteTemplate");
 var listTemplate = document.getElementById("listTemplate");
 var mainElement = document.getElementById("main");
 
+initialize();
+
 var listTypes = [];
 function setAllListTypes() {
     listTypes = dataNotes.reduce(function(acc, curr, i, arr) {
