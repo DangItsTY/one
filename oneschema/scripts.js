@@ -7,7 +7,7 @@ var deadlineInput = document.getElementById("deadlineInput");
 var filterInput = document.getElementById("filterInput");
 var filterList = document.getElementById("filterList");
 var deadlineFilter = document.getElementById("deadlineFilter");
-var keyboardListener = document.addEventListener("keypress", keyboard);
+var keyboardListener = document.addEventListener("keydown", keyboard);
 var dropListener = document.addEventListener("drop", onDrop);
 var filters = [];
 
