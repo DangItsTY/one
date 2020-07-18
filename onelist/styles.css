@@ -10,3 +10,15 @@ body {
 .onenote:first-child .note {
     color: #FFFFFF;
 }
+.future {
+  margin-top: 8px;
+  text-align: center;
+}
+.future button {
+  color: #FFFFFF;
+  background-color: #FF4D4D;
+  border: none;
+  font-size: 21px;
+  font-family: inherit;
+  border-radius: 8px;
+}
