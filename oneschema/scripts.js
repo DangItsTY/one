@@ -75,10 +75,16 @@ function keyboard(e) {
 }
 
 function addNote() {
+  var newDate = deadlineInput.value;
+  if (deadlineInput.value.length > 0) {
+    var d = deadlineInput.value.split("-");
+    var date = new Date(parseInt(d[0]), parseInt(d[1])-1, parseInt(d[2]));
+    newDate = date.toISOString();
+  }
     add({
         "note": ""+noteInput.value,
         "category": categoryInput.value,
-		"deadline": deadlineInput.value
+		"deadline": newDate
     });
     noteInput.value = '';
     categoryInput.value = '';
