@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>noteD</title>
+    <link rel="manifest" href="../manifest.json" />
+    <meta name="theme-color" content="#a6ffee" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+    <link rel="apple-touch-icon" href="../icons/apple-touch-icon.png" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <section id="edit" class="edit">
+        <form onsubmit="add()">
+          <input id="editInput" type="text" placeholder="One liner..." />
+        </form>
+      </section>
+      <section class="bubble">
+        <button id="add" class="add" onclick="toggleEdit()">+</button>
+      </section>
+      <section id="list" class="todo-style">
+        <!-- <article class="item">
+				<input type="checkbox">
+				<span>Task 1</span>
+				<span>More description...</span>
+				<span>Footer notes here</span>
+			</article> -->
+      </section>
+      <section id="clear">
+        <button
+          id="clearButton"
+          ondrag="clearList(false)"
+          onmouseup="clearList(true)"
+        >
+          Clear
+        </button>
+      </section>
+      <section class="cover">
+        <p id="cover"></p>
+      </section>
+    </main>
+    <script src="game.js"></script>
+    <script src="../libs/pwa-register.js"></script>
+  </body>
+</html>
