@@ -25,7 +25,11 @@ function initializeTest() {
 //initializeTest();
 
 function load() {
-  // load data from the real data, localStorage
+  //load data from the real data, localStorage
+  if (localStorage.getItem("data") == null) {
+    // first, create data object if it doesn't exist
+    wipe();
+  }
   dataLocal = localStorage.getItem("data");
   data = JSON.parse(dataLocal);
   dataNotes = data.data;
