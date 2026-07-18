@@ -104,7 +104,7 @@ function save() {
   console.log(data);
   data = JSON.stringify(data);
   console.log(data);
-  localStorage.setItem("data", data);
+  localStorage.setItem("noted", data);
 }
 
 function update(index, key, value) {
@@ -116,7 +116,7 @@ function clear() {
   var element = document.getElementById("list");
   element.innerHTML = "";
   noteList = [];
-  localStorage.setItem("data", '{"data":[]}');
+  localStorage.setItem("noted", '{"data":[]}');
 }
 
 //	~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
@@ -180,9 +180,13 @@ function initialize() {
 function load() {
   console.log("loading");
   //populateLotsOfNotes(1);
-  //localStorage.setItem('data', '{"data":[]}');
+  //localStorage.setItem('noted', '{"data":[]}');
 
-  var data = localStorage.getItem("data");
+  if (localStorage.getItem("noted") == null) {
+    // first, create data object if it doesn't exist
+    clear();
+  }
+  var data = localStorage.getItem("noted");
   console.log(data);
   data = JSON.parse(data);
   console.log(data);
