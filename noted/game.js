@@ -13,7 +13,7 @@ var noteTemplate = {
 };
 var noteList = [];
 var data;
-var who = 'Ty';
+var who = 'Person';
 
 //	~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
 //	Note Scripts
