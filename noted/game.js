@@ -13,7 +13,7 @@ var noteTemplate = {
 };
 var noteList = [];
 var data;
-var who = "Person";
+var who = "Ty";
 
 //	~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
 //	Note Scripts
@@ -79,30 +79,9 @@ function toggleEdit() {
   }
 }
 
-function renderClear() {
-  var target = document.getElementById("list");
-  target.innerHTML = "";
-}
-
-function goLeft() {
-  previousList();
-  load();
-  renderClear();
-  render();
-}
-
-function goRight() {
-  nextList();
-  load();
-  renderClear();
-  render();
-}
-
 //	~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
 //	Data Scripts
 //	~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
-
-var dataIndex = 0;
 
 function add() {
   event.preventDefault();
@@ -125,11 +104,7 @@ function save() {
   console.log(data);
   data = JSON.stringify(data);
   console.log(data);
-  if (dataIndex == 0) {
-    localStorage.setItem("data", data);
-  } else {
-    localStorage.setItem("data" + dataIndex, data);
-  }
+  localStorage.setItem("data", data);
 }
 
 function update(index, key, value) {
@@ -141,29 +116,8 @@ function clear() {
   var element = document.getElementById("list");
   element.innerHTML = "";
   noteList = [];
-  if (dataIndex == 0) {
-    localStorage.setItem("data", '{"data":[]}');
-  } else {
-    localStorage.setItem("data" + dataIndex, '{"data":[]}');
-  }
+  localStorage.setItem("data", '{"data":[]}');
 }
-
-function nextList() {
-  console.log("next");
-  dataIndex += 1;
-}
-
-function previousList() {
-  console.log("previous");
-  if (dataIndex > 0) {
-    dataIndex -= 1;
-  }
-}
-
-function allClear() {
-  localStorage.clear();
-}
-//allClear();
 
 //	~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
 //	Development Scripts
@@ -228,22 +182,10 @@ function load() {
   //populateLotsOfNotes(1);
   //localStorage.setItem('data', '{"data":[]}');
 
-  var data =
-    dataIndex == 0
-      ? localStorage.getItem("data")
-      : localStorage.getItem("data" + dataIndex);
+  var data = localStorage.getItem("data");
   console.log(data);
   data = JSON.parse(data);
   console.log(data);
-
-  if (data == null) {
-    localStorage.setItem("data" + dataIndex, '{"data":[]}');
-    data =
-      dataIndex == 0
-        ? localStorage.getItem("data")
-        : localStorage.getItem("data" + dataIndex);
-    data = JSON.parse(data);
-  }
   noteList = data.data;
 }
 load();
