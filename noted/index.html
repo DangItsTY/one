@@ -6,7 +6,10 @@
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <title>noteD</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="manifest" href="../manifest.json" />
+    <meta name="theme-color" content="#a6ffee" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+    <link rel="apple-touch-icon" href="../icons/apple-touch-icon.png" />
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
@@ -45,21 +48,7 @@
         <p id="cover"></p>
       </section>
     </main>
-    <script>
-      if ("serviceWorker" in navigator) {
-        navigator.serviceWorker
-          .register("/sw.js", { scope: "/" })
-          .then(function (registration) {
-            console.log("Service Worker Registered");
-          });
-        navigator.serviceWorker.ready.then(function (registration) {
-          console.log("Service Worker Ready");
-        });
-      }
-      /*
-	Laggy checkbox
-	*/
-    </script>
     <script src="game.js"></script>
+    <script src="../libs/pwa-register.js"></script>
   </body>
 </html>
