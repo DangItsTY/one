@@ -79,9 +79,30 @@ function toggleEdit() {
   }
 }
 
+function renderClear() {
+  var target = document.getElementById("list");
+  target.innerHTML = "";
+}
+
+function goLeft() {
+  previousList();
+  load();
+  renderClear();
+  render();
+}
+
+function goRight() {
+  nextList();
+  load();
+  renderClear();
+  render();
+}
+
 //	~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
 //	Data Scripts
 //	~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
+
+var dataIndex = 0;
 
 function add() {
   event.preventDefault();
@@ -104,7 +125,11 @@ function save() {
   console.log(data);
   data = JSON.stringify(data);
   console.log(data);
-  localStorage.setItem("noted", data);
+  if (dataIndex == 0) {
+    localStorage.setItem("noted", data);
+  } else {
+    localStorage.setItem("noted" + dataIndex, data);
+  }
 }
 
 function update(index, key, value) {
@@ -116,8 +141,29 @@ function clear() {
   var element = document.getElementById("list");
   element.innerHTML = "";
   noteList = [];
-  localStorage.setItem("noted", '{"data":[]}');
+  if (dataIndex == 0) {
+    localStorage.setItem("noted", '{"data":[]}');
+  } else {
+    localStorage.setItem("noted" + dataIndex, '{"data":[]}');
+  }
 }
+
+function nextList() {
+  console.log("next");
+  dataIndex += 1;
+}
+
+function previousList() {
+  console.log("previous");
+  if (dataIndex > 0) {
+    dataIndex -= 1;
+  }
+}
+
+function allClear() {
+  localStorage.clear();
+}
+//allClear();
 
 //	~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
 //	Development Scripts
@@ -182,14 +228,24 @@ function load() {
   //populateLotsOfNotes(1);
   //localStorage.setItem('noted', '{"data":[]}');
 
-  if (localStorage.getItem("noted") == null) {
-    // first, create data object if it doesn't exist
-    clear();
-  }
-  var data = localStorage.getItem("noted");
+  var data =
+    dataIndex == 0
+      ? localStorage.getItem("noted")
+      : localStorage.getItem("noted" + dataIndex);
   console.log(data);
   data = JSON.parse(data);
   console.log(data);
+
+  if (data == null) {
+    dataIndex == 0
+      ? localStorage.setItem("noted", '{"data":[]}')
+      : localStorage.setItem("noted" + dataIndex, '{"data":[]}');
+    data =
+      dataIndex == 0
+        ? localStorage.getItem("noted")
+        : localStorage.getItem("noted" + dataIndex);
+    data = JSON.parse(data);
+  }
   noteList = data.data;
 }
 load();
