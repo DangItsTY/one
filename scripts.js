@@ -1,3 +1,4 @@
+// TODO: this entire file can be empty after i extract the requirements
 var oneElement = document
   .getElementById("one")
   .getElementsByTagName("section")[0];
@@ -26,7 +27,7 @@ var importElement = document
   .getElementById("import")
   .getElementsByTagName("section")[0];
 
-initialize();
+//initialize();
 
 function render() {
   for (var i = 0; i < dataNotes.length; i++) {
@@ -105,7 +106,7 @@ function render() {
     }
   }
 }
-render();
+//render();
 
 // do not load navigation because this page is different
 function loadNavbar() {}
