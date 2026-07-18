@@ -1,22 +1,22 @@
 body {
-    background-color: #610000;
+  background-color: #610000;
 }
 .note {
-    background-color: #FF4D4D;
-    color: #ED9F9F;
-    display: inline-block;
-    width: calc(100% - 13px - 100px - 50px); /* temp */
+  background-color: #ff4d4d;
+  color: #ed9f9f;
+  display: inline-block;
+  width: calc(100% - 13px - 100px - 50px); /* temp */
 }
 .onenote:first-child .note {
-    color: #FFFFFF;
+  color: #ffffff;
 }
 .future {
   margin-top: 8px;
   text-align: center;
 }
 .future button {
-  color: #FFFFFF;
-  background-color: #FF4D4D;
+  color: #ffffff;
+  background-color: #ff4d4d;
   border: none;
   font-size: 21px;
   font-family: inherit;

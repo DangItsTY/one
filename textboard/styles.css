@@ -1,60 +1,60 @@
 body {
-    margin: 0px;
+  margin: 0px;
 }
 .textboard {
-    display: flex;
-    flex-wrap: wrap;
-    width: 1024px;
-    margin-left: auto;
-    margin-right: auto;
-	zoom: 117%;
+  display: flex;
+  flex-wrap: wrap;
+  width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+  zoom: 117%;
 }
 @media (min-width: 1597px) {
-.textboard {
-	width: 1597px;
-	zoom: 118%;
-}
+  .textboard {
+    width: 1597px;
+    zoom: 118%;
+  }
 }
 .textboard .note {
-    font-size: 13px;
-    background-color: #A6FFEE;
-    width: 105px;
-    height: 55px;
-    padding: 13px;
-    margin-top: 13px;
-    margin-bottom: 13px;
-    margin-right: 13px;
-    overflow-y: auto;
+  font-size: 13px;
+  background-color: #a6ffee;
+  width: 105px;
+  height: 55px;
+  padding: 13px;
+  margin-top: 13px;
+  margin-bottom: 13px;
+  margin-right: 13px;
+  overflow-y: auto;
 }
 @media (max-width: 1597px) {
-.textboard .note:nth-child(7n + 1) {
+  .textboard .note:nth-child(7n + 1) {
     margin-left: 13px;
-}
+  }
 }
 @media (min-width: 1597px) {
-.textboard .note:nth-child(11n + 1) {
+  .textboard .note:nth-child(11n + 1) {
     margin-left: 13px;
-}
+  }
 }
 .textboard .note h1 {
-    font-size: inherit;
-    font-weight: normal;
-    margin: 0px;
-    text-align: center;
+  font-size: inherit;
+  font-weight: normal;
+  margin: 0px;
+  text-align: center;
 }
 .textboard .note p {
-    margin: 0px;
+  margin: 0px;
 }
 .textboard .note textarea {
-    font-family: inherit;
-    font-size: inherit;
-    padding: 0px;
-    margin: 0px;
-    border: 0px;
-    background: none;
-    outline: none;
-    resize: none;
-    display: block;
-    width: calc(130px - 13px - 13px);
-    height: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  background: none;
+  outline: none;
+  resize: none;
+  display: block;
+  width: calc(130px - 13px - 13px);
+  height: inherit;
 }

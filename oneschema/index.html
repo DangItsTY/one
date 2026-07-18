@@ -1,37 +1,62 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>oneschema</title>
-<link rel="stylesheet" type="text/css" href="../libs/styles.css" />
-<link rel="stylesheet" type="text/css" href="styles.css" />
-</head>
-<body>
-<main>
-<section>
-<input id="noteInput" name="noteInput" type="text" placeholder="Enter new note...">
-<input id="categoryInput" name="categoryInput" type="text" placeholder="With category...">
-<input id="deadlineInput" name="deadlineInput" type="date" placeholder="With deadline...">
-</section>
-<section name="filter">
-<h1>Filters</h1>
-Deadline?<input id="deadlineFilter" name="deadlineFilter" type="checkbox" onclick="filterToggle(event)" />
-<input id="filterInput" name="filterInput" type="text" placeholder="Filter...">
-:<span id="filterList"></span>
-</section>
-<section id="notes" name="notes"></section>
-</main>
-<template id="noteTemplate">
-<article class="note" draggable="true">
-	<textarea name="note"></textarea>
-	<input type="text" name="category" placeholder="category">
-	<input type="date" name="deadline" />
-	<button type="button">Delete</button>
-</article>
-</template>
-</body>
-<script src="../libs/oneschema.js"></script>
-<script src="../libs/scripts.js"></script>
-<script src="../libs/drag.js"></script>
-<script src="scripts.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <title>oneschema</title>
+    <link rel="stylesheet" type="text/css" href="../libs/styles.css" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <section>
+        <input
+          id="noteInput"
+          name="noteInput"
+          type="text"
+          placeholder="Enter new note..."
+        />
+        <input
+          id="categoryInput"
+          name="categoryInput"
+          type="text"
+          placeholder="With category..."
+        />
+        <input
+          id="deadlineInput"
+          name="deadlineInput"
+          type="date"
+          placeholder="With deadline..."
+        />
+      </section>
+      <section name="filter">
+        <h1>Filters</h1>
+        Deadline?<input
+          id="deadlineFilter"
+          name="deadlineFilter"
+          type="checkbox"
+          onclick="filterToggle(event)"
+        />
+        <input
+          id="filterInput"
+          name="filterInput"
+          type="text"
+          placeholder="Filter..."
+        />
+        :<span id="filterList"></span>
+      </section>
+      <section id="notes" name="notes"></section>
+    </main>
+    <template id="noteTemplate">
+      <article class="note" draggable="true">
+        <textarea name="note"></textarea>
+        <input type="text" name="category" placeholder="category" />
+        <input type="date" name="deadline" />
+        <button type="button">Delete</button>
+      </article>
+    </template>
+  </body>
+  <script src="../libs/oneschema.js"></script>
+  <script src="../libs/scripts.js"></script>
+  <script src="../libs/drag.js"></script>
+  <script src="scripts.js"></script>
 </html>

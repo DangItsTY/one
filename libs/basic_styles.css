@@ -1,33 +1,33 @@
 /* Colors */
 .calmblue {
-    background-color: #A6FFEE;
+  background-color: #a6ffee;
 }
 .white {
-	background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 .alertred {
-    background-color: #FF4D4D;
+  background-color: #ff4d4d;
 }
 .alertreddark {
-    background-color: #610000;
+  background-color: #610000;
 }
 .alertredopaque {
-    color: #ED9F9F;
+  color: #ed9f9f;
 }
 
 body {
-    margin: 0px;
+  margin: 0px;
 }
 textarea.naked {
-    font-family: inherit;
-    font-size: inherit;
-    padding: 0px;
-    margin: 0px;
-    border: 0px;
-    background: none;
-    outline: none;
-    resize: none;
-    display: block;
-    width: inherit;
-    height: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  background: none;
+  outline: none;
+  resize: none;
+  display: block;
+  width: inherit;
+  height: inherit;
 }

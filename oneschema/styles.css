@@ -1,24 +1,24 @@
 body {
-    margin: 0px;
-    background-color: #A6FFEE;
+  margin: 0px;
+  background-color: #a6ffee;
 }
 main {
-    margin: 13px;
+  margin: 13px;
 }
 .note {
-    background-color: #FFFFFF;
-    margin: 13px;
-    padding: 5px;
+  background-color: #ffffff;
+  margin: 13px;
+  padding: 5px;
 }
 .note textarea {
-    font-family: inherit;
-    font-size: inherit;
-    padding: 0px;
-    margin: 0px;
-    border: 0px;
-    background: none;
-    outline: none;
-    resize: none;
-    width: calc(100% - 450px);
-    height: 1.1em;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  background: none;
+  outline: none;
+  resize: none;
+  width: calc(100% - 450px);
+  height: 1.1em;
 }
