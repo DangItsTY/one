@@ -1,6 +1,6 @@
 // Bump this on every deploy that changes any cached file — it's what
 // forces the browser to detect an updated sw.js and refresh the cache.
-var CACHE_NAME = "one-v2";
+var CACHE_NAME = "one-v3";
 
 var PRECACHE_URLS = [
   "./",
