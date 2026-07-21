@@ -75,6 +75,11 @@ function loadNavbar() {
   navElement.appendChild(navlink);
 
   navlink = document.createElement("a");
+  navlink.setAttribute("href", "../noted2/index.html");
+  navlink.innerHTML = "noted2";
+  navElement.appendChild(navlink);
+
+  navlink = document.createElement("a");
   navlink.setAttribute("href", "../export/index.html");
   navlink.innerHTML = "export";
   navElement.appendChild(navlink);
