@@ -61,15 +61,15 @@ main {
   position: fixed;
   bottom: 34px;
   right: 34px;
-  width: 144px;
-  height: 144px;
-  border-radius: 144px;
+  width: 89px;
+  height: 89px;
+  border-radius: 89px;
   border: none;
   background-color: rgba(248, 114, 140, 1);
   color: rgba(255, 255, 255, 1);
   box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.4);
-  font-size: 89px;
-  line-height: 89px;
+  font-size: 55px;
+  line-height: 55px;
 }
 .add.pressed {
   border-style: inset;
@@ -80,12 +80,12 @@ main {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 13px;
-  width: 144px;
+  width: 89px;
 }
 #clearButton {
-  width: 144px;
-  height: 144px;
-  font-size: 34px;
+  width: 89px;
+  height: 89px;
+  font-size: 21px;
   border: none;
   background-color: rgba(158, 159, 226, 1);
   color: rgba(255, 255, 255, 1);
