@@ -208,6 +208,30 @@ function clearList() {
 }
 
 //	~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
+//	Keyboard Events
+//	~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
+
+document.addEventListener("keydown", function (e) {
+  var isEditing = document.getElementById("edit").classList.contains("opened");
+
+  if (isEditing) {
+    if (e.key === "Escape") {
+      document.getElementById("add").click();
+    }
+    return;
+  }
+
+  if (e.key === "ArrowLeft") {
+    document.getElementById("left").click();
+  } else if (e.key === "ArrowRight") {
+    document.getElementById("right").click();
+  } else if (e.key === "Enter") {
+    e.preventDefault();
+    document.getElementById("add").click();
+  }
+});
+
+//	~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
 //	Game Functions
 //	~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
 
