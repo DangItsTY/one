@@ -59,11 +59,13 @@ main {
 }
 .bubble {
   position: fixed;
-}
-.add {
-  position: fixed;
   bottom: 34px;
   right: 34px;
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+.add {
   width: 89px;
   height: 89px;
   border-radius: 89px;
@@ -80,9 +82,6 @@ main {
   box-shadow: none;
 }
 .right {
-  position: fixed;
-  bottom: 34px;
-  right: 123px;
   width: 89px;
   height: 89px;
   border-radius: 89px;
@@ -94,9 +93,6 @@ main {
   line-height: 55px;
 }
 .left {
-  position: fixed;
-  bottom: 34px;
-  right: 212px;
   width: 89px;
   height: 89px;
   border-radius: 89px;
