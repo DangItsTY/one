@@ -22,17 +22,19 @@ main {
 }
 .edit input[type="text"] {
   width: 100%;
-  height: 55px;
-  font-size: 55px;
-  min-height: 55px;
-  line-height: 55px;
+  height: 34px;
+  font-size: 34px;
+  min-height: 34px;
+  line-height: 34px;
   display: block;
 }
 .todo-style {
   padding: 21px;
 }
 .item {
-  font-size: 55px;
+  display: flex;
+  align-items: center;
+  font-size: 34px;
   background-color: rgba(255, 255, 255, 1);
   border-radius: 5px;
   box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.4);
@@ -50,6 +52,7 @@ main {
     color 0.3s linear 0s;
 }
 .item input {
+  flex: 0 0 34px;
   width: 34px;
   height: 34px;
   margin-right: 13px;
@@ -61,15 +64,15 @@ main {
   position: fixed;
   bottom: 34px;
   right: 34px;
-  width: 144px;
-  height: 144px;
-  border-radius: 144px;
+  width: 89px;
+  height: 89px;
+  border-radius: 89px;
   border: none;
   background-color: rgba(248, 114, 140, 1);
   color: rgba(255, 255, 255, 1);
   box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.4);
-  font-size: 89px;
-  line-height: 89px;
+  font-size: 55px;
+  line-height: 55px;
 }
 .add.pressed {
   border-style: inset;
@@ -79,41 +82,41 @@ main {
 .right {
   position: fixed;
   bottom: 34px;
-  right: 178px;
-  width: 144px;
-  height: 144px;
-  border-radius: 144px;
+  right: 123px;
+  width: 89px;
+  height: 89px;
+  border-radius: 89px;
   border: none;
   background-color: rgba(248, 114, 140, 1);
   color: rgba(255, 255, 255, 1);
   box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.4);
-  font-size: 89px;
-  line-height: 89px;
+  font-size: 55px;
+  line-height: 55px;
 }
 .left {
   position: fixed;
   bottom: 34px;
-  right: 322px;
-  width: 144px;
-  height: 144px;
-  border-radius: 144px;
+  right: 212px;
+  width: 89px;
+  height: 89px;
+  border-radius: 89px;
   border: none;
   background-color: rgba(248, 114, 140, 1);
   color: rgba(255, 255, 255, 1);
   box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.4);
-  font-size: 89px;
-  line-height: 89px;
+  font-size: 55px;
+  line-height: 55px;
 }
 #clear {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 13px;
-  width: 144px;
+  width: 89px;
 }
 #clearButton {
-  width: 144px;
-  height: 144px;
-  font-size: 34px;
+  width: 89px;
+  height: 89px;
+  font-size: 21px;
   border: none;
   background-color: rgba(158, 159, 226, 1);
   color: rgba(255, 255, 255, 1);
