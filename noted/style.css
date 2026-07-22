@@ -63,7 +63,7 @@ main {
   right: 34px;
   display: flex;
   align-items: center;
-  gap: 34px;
+  gap: 8px;
 }
 .add {
   width: 89px;
