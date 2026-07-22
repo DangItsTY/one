@@ -1,6 +1,6 @@
 // Bump this on every deploy that changes any cached file — it's what
 // forces the browser to detect an updated sw.js and refresh the cache.
-var CACHE_NAME = "one-v5";
+var CACHE_NAME = "one-v7";
 
 var PRECACHE_URLS = [
   "./",
@@ -27,9 +27,11 @@ var PRECACHE_URLS = [
   "./manylists/scripts.js",
   "./manylists/styles.css",
   "./noted/index.html",
+  "./noted/manifest.json",
   "./noted/game.js",
   "./noted/style.css",
   "./noted2/index.html",
+  "./noted2/manifest.json",
   "./noted2/game.js",
   "./noted2/style.css",
   "./onelist/index.html",
